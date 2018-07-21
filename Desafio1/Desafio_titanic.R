@@ -3,8 +3,8 @@ train <- read.csv("/home/henrique/Documents/BigData/Desafio1/train.csv",stringsA
 test <- read.csv("/home/henrique/Documents/BigData/Desafio1/test.csv", stringsAsFactors = FALSE)
 
 # Unir os conjuntos para tratar os dados
-test$Survived <- NA
 combi <- rbind(train, test)
+#combi$Survived <- NA
 
 #Which encontra os dados que falta em uma coluna no Dataframe
 which(combi$Embarked == "")
@@ -81,13 +81,5 @@ submissao$Survived <- previsao
 
 submissao$Survived
 submissao$PassengerId
-
-#Somar os acertos
-acertos <- sum(ifelse(submissao$Survived == test$Survived,1,0))
-ifelse(submissao$Survived == test$Survived,1,0)
-#Acurácia (ACC) - Assertividade
-acertos/200
-#Matriz de Confusão
-table(prev, teste$Survived)
 
 write.csv(submissao, file="/home/henrique/Documents/BigData/Desafio1/predict.csv", row.names=FALSE)
