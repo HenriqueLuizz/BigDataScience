@@ -1,0 +1,6 @@
+eixo X -> Causa, feature, independente, exógena.
+eixo Y -> Consequencia, alvo, target, dependente, endogena
+
+Desenho apresentado é semelhante ao grafico de pontos.
+
+y=axi+bi+Ei
